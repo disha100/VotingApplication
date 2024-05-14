@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'styles/formStyle.css' %}"> -->
+    <style>
+        body{
+            background-color: #4CAF50;
+        }
+            form { background-color: aliceblue ;max-width: 400px; margin: 90px auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; font-family: Arial, sans-serif; } h2 { text-align: center; color: #333; } label { display: block; margin-bottom: 5px; font-weight: bold; } input[type="text"], input[type="email"], input[type="password"] { width: 90%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; } input[type="submit"] { width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; } </style>
+    </style>
+</head>
+<body>
+    
+    <form action="register" method="post" align="center">
+        <h1>Create Account</h1>
+        <div class="container">
+        {% csrf_token %}
+        <input type="text" name="firstName" placeholder="firstName" /><br>
+        <input type="text" name="lastName" placeholder="lastName" /><br>
+        <input type="text" name="username" placeholder="Username" /><br>
+        <input type="email" name="Email" placeholder="Email" /><br>
+        <input type="password" name="pass1" placeholder="Password" /><br>
+        <input type="password" name="pass2" placeholder="Confirm Password"/><br>
+        <input type="submit" class="registerbtn">
+
+        {% for message in messages %}
+           <h4 style="color:rgb(5, 30, 112); font-family:monospace " ;>{{message}}</h4>
+        {% endfor %}   
+    </div>
+    </form>
+
+</body>
+</html>
+

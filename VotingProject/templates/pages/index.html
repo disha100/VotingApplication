@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    #first{
+        margin-top: 90px;
+    }
+</style>
+<div class="card text-center" id="first">  
+    <div class="card-body" > 
+       <h1> Welcome to Poll App </h1>
+    <p>A poll for developers !</p>
+    <a class="btn btn-dark" href = "{% url 'polls:index' %}"> 
+        Browse Polls! </a>   
+    </div>
+</div>
+{% endblock %}
